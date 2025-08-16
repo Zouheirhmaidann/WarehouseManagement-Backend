@@ -1,5 +1,6 @@
 const req = require("express/lib/request.js");
 const WarehouseModel = require("../Models/WarehouseModel.js");
+const verifyToken = require("./sync/verifyToken.js");
 const WarehouseRoutes = (app) => {
   app.post("/loginUser", (req, res) => {
     WarehouseModel.loginUser(req.body, (err, result) => {
@@ -10,7 +11,7 @@ const WarehouseRoutes = (app) => {
       }
     });
   });
-  app.get("/fetchOrders", (req, res) => {
+  app.get("/fetchOrders", verifyToken, (req, res) => {
     WarehouseModel.fetchOrders(
       req.headers.username,
       req.query.status,
