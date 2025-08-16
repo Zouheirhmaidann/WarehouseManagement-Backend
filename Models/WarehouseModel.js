@@ -6,7 +6,6 @@ const WarehouseModel = {};
 WarehouseModel.loginUser = async (body, callback) => {
   try {
     const { username, password } = body;
-    console.log("Login attempt for user:", username, password);
     // 1. Get user from Supabase
     const { data: users, error } = await supabase
       .from("users")
