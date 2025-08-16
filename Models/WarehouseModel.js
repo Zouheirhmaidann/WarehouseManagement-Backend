@@ -41,7 +41,6 @@ WarehouseModel.loginUser = async (body, callback) => {
       user: {
         id: user.id,
         username: user.username,
-        email: user.email,
       },
     });
   } catch (error) {

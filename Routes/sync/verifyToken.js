@@ -13,7 +13,7 @@ const verifyToken = (req, res, next) => {
     // Proceed to the next middleware if any or route handler
     next();
   } catch (ex) {
-    return res.status(400).send("Invalid token.");
+    return res.status(401).json({ error: "Invalid token." });
   }
 };
 
