@@ -29,7 +29,7 @@ A Node.js backend service for warehouse management system built with Express.js 
 ## API Endpoints
 
 - `POST /loginUser`: User authentication endpoint
-- `GET /fetchOrders`: Protected endpoint to fetch user-specific orders
+- `GET /fetchOrders`: Protected endpoint to fetch user-specific orders. Requires username in request headers and status as query parameter. Orders are filtered based on the username provided in the headers. (not by `id` for demo purposes)
 
 ## Prerequisites
 

@@ -60,6 +60,7 @@ WarehouseModel.fetchOrders = async (username, status, callback) => {
     if (error) {
       throw error;
     }
+    console.log(orders);
     callback(null, orders);
   } catch (error) {
     callback(error, null);
